@@ -9,10 +9,13 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "90vh"
+        height: "90vh",
+        [theme.breakpoints.down('xs')]:{
+            height: "75vh"
+        }
     },
     image:{
-        maxWidth: "100%",
+        maxWidth: "90%",
         height: "auto",
         display: "block",
     },
@@ -20,20 +23,37 @@ const useStyles = makeStyles((theme) => ({
     },
     textContainer:{
         marginBottom: 30,
+        
     },
     boxText:{
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        height: "100%"
+        height: "100%",
+        [theme.breakpoints.down('xs')]:{
+            textAlign: "center"
+        }
     },
     button:{
-        backgroundColor: "#d6000d",
-        color: "#fff",
-        borderRadius: 10
+        borderRadius: 10,
+        fontSize: 17
     },
-    text:{
+    text1:{
         fontWeight: "bold",
+        [theme.breakpoints.down('xs')]:{
+            fontSize: 20
+        }
+    },
+    text2:{
+        fontWeight: "bold",
+        [theme.breakpoints.down('xs')]:{
+            fontSize: 45
+        }
+    },
+    imageContainer:{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
     }
 }));
 
@@ -45,26 +65,26 @@ export default function Home(){
         <div>
             <TopMenu/>
             <Grid container  className={classes.contentCenter}>
-            <Grid container lg={9} spacing={5}>
-                <Grid item lg={6} xs={12}>
+            <Grid container lg={10} xs={12} spacing={5}>
+                <Grid item lg={6} xs={12} className={classes.imageContainer}>
                     <img className={classes.image} src={img}/>
                 </Grid>
                 <Grid item lg={6} xs={12} className={classes.text}>
-                    <box className={classes.boxText}>
+                    <Box className={classes.boxText}>
                         <div>
                         <div className={classes.textContainer}>
-                            <Typography variant="h5" className={classes.text}>
+                            <Typography variant="h5" className={classes.text1}>
                                 Alavanque seu negócio com um
                             </Typography>
-                            <Typography variant="h2" color="primary" className={classes.text}>
+                            <Typography variant="h2" color="primary" className={classes.text2}>
                                 Website incrível
                             </Typography>
                         </div>
-                        <Button size="large" variant="contained" color="primary">
+                        <Button size="large" variant="contained" color="primary" className={classes.button}>
                             Solicitar orçamento
                         </Button>
                         </div>
-                    </box>
+                    </Box>
                 </Grid>
             </Grid>
             </Grid>

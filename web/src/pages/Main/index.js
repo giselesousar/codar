@@ -10,7 +10,10 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         flexFlow: "column",
-        height: "100vh"
+        height: "120vh",
+        [theme.breakpoints.down('xs')]:{
+            height: "100vh"
+        }
     }
   }));
 
@@ -25,10 +28,6 @@ export default function Main(){
             <div className={classes.root}>
 
             <Services/>
-            </div>
-            <div className={classes.root}>
-
-            <Contact/>
             </div>
             <Footer/>
         </div>

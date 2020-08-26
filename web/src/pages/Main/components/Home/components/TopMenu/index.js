@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {AppBar, Toolbar, Box,MenuItem, IconButton, Typography} from '@material-ui/core'
+import {AppBar, Toolbar, Box,MenuItem, IconButton, Typography, Grid} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   appBar:{
@@ -9,13 +9,30 @@ const useStyles = makeStyles((theme) => ({
     padding: 5,
   },
   title:{
-    fontSize: 30
+    fontSize: 30,
+    [theme.breakpoints.down('xs')]:{
+      fontSize: 25,
+    }
   },
   menuButton:{
     fontSize: 45,
   },
   textAppbar:{
     color: "#D6000D"
+  },
+  logoContainer: {
+    [theme.breakpoints.down('xs')]:{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }
+  },
+  menuContainer:{
+    [theme.breakpoints.down('xs')]:{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center"
+    }
   }
   }));
 
@@ -25,7 +42,9 @@ export default function TopMenu(){
     return(
         <AppBar position="relative" elevation={0} className={classes.appBar}>
       <Toolbar>
-          <Box display='flex' flexGrow={1}>
+        <Grid container className={classes.menuContainer}>
+          <Grid item xs={12} lg={8} >
+          <Box display='flex' flexGrow={1} className={classes.logoContainer}>
             <IconButton
             edge='start'
             className={classes.menuButton}
@@ -35,6 +54,7 @@ export default function TopMenu(){
                  <i className={classes.textAppbar}>Codar</i>.
             </IconButton>
         </Box>
+        </Grid>
         <MenuItem>
           <Typography variant='h6' className={classes.title}>
             Início
@@ -50,6 +70,7 @@ export default function TopMenu(){
             Contato
           </Typography>
         </MenuItem>
+        </Grid>
       </Toolbar>
     </AppBar>
     )
