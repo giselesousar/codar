@@ -1,7 +1,7 @@
 import React from 'react';
-import {Grid, Typography, Box, Button, Input} from '@material-ui/core';
+import {Grid, Typography, Box, Button, Input, Card} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import {CheckBoxRounded} from '@material-ui/icons';
+import {CheckBoxRounded, AccountCircleRounded} from '@material-ui/icons';
 import img from '../../../../assets/coding_.png'
 
 const useStyles = makeStyles((theme) => ({
@@ -73,6 +73,27 @@ const useStyles = makeStyles((theme) => ({
             textAlign: "center"
         }
        
+    },
+    card:{
+        backgroundColor: "rgb(0,0,0,5%)",
+        height: "25vh"
+    },
+    cardContent:{
+        padding: 10,
+    },
+    AccountIconContainer:{
+        display: "flex",
+        justifyContent: "center",
+        height: "100%"
+    },
+    AccountIcon:{
+        fontSize: "80px"
+    },
+    cardsContainer:{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 50,
     }
 }));
 
@@ -126,8 +147,55 @@ export default function Services(){
                         <Button size="large" variant="contained" color="primary" className={classes.button}>Ligamos para você</Button>
                     </Grid>
                 </Grid>
+              
             </Grid>
-
+            <Grid container lg={10} xs={12} spacing={3} className={classes.cardsContainer}>
+                    <Grid item lg={6} xs={10}>
+                        <Card className={classes.card}>
+                            <Grid container spacing={3} className={classes.cardContent}>
+                            <Grid item lg={3} xs={3}>
+                                <div className={classes.AccountIconContainer}>
+                                <AccountCircleRounded color="primary" className={classes.AccountIcon}/>
+                                </div>
+                            </Grid>
+                            <Grid item lg={9} xs={9}>
+                                <Typography variant="body1">
+                                    Já tive experiências com outras 4 empresas da área e a Codar é sem sombra de dúvidas superior em todos os aspectos.
+                                </Typography>
+                                <Typography variant= "h5">
+                                    Pedro Ferreira
+                                </Typography>
+                                <Typography variant= "h6">
+                                    Construtora Minari
+                                </Typography>
+ 
+                            </Grid>
+                            </Grid>
+                        </Card>
+                    </Grid>
+                    <Grid item lg={6} xs={10}>
+                        <Card className={classes.card}>
+                            <Grid container spacing={3} className={classes.cardContent}>
+                            <Grid item lg={3} xs={3}>
+                                <div className={classes.AccountIconContainer}>
+                                <AccountCircleRounded color="primary" className={classes.AccountIcon}/>
+                                </div>
+                            </Grid>
+                            <Grid item lg={9} xs={9}>
+                                <Typography variant="body1">
+                                    Processos bem simples e criação de um site exatamente como a minha escola queria!                                </Typography>
+                                <Typography variant= "h5">
+                                    Maria Rita
+                                </Typography>
+                                <Typography variant= "h6">
+                                    Escola Criança Feliz
+                                </Typography>
+ 
+                            </Grid>
+                            </Grid>
+                        </Card>
+                    </Grid>
+                </Grid>
             </Grid>
 
         </div>

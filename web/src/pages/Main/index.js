@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Home from './components/Home';
 import Services from './components/Services';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,6 +12,14 @@ const useStyles = makeStyles((theme) => ({
         height: "120vh",
         [theme.breakpoints.down('xs')]:{
             height: "100vh"
+        }
+    },
+    section2: {
+        display: "flex",
+        flexFlow: "column",
+        height: "150vh",
+        [theme.breakpoints.down('xs')]:{
+            height: "140vh"
         }
     }
   }));
@@ -25,7 +32,7 @@ export default function Main(){
             <div className={classes.root}>
             <Home/>
             </div>
-            <div className={classes.root}>
+            <div className={classes.section2}>
 
             <Services/>
             </div>
